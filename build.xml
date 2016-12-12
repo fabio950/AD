@@ -7,9 +7,18 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="AD" default="default" basedir=".">
+<project name="AD" default="t1" basedir=".">
     <description>Builds, tests, and runs the project AD.</description>
     <import file="nbproject/build-impl.xml"/>
+    <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask"/>
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask"/>
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask"/>
+    <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask"/>
+    <taskdef name="closeconnections" classname="es.elfframework.ant.CloseTomcatDataSource"/>
+    
+    <target name="t1" depends="">
+      <deploy url="http://172.16.205.126/manager/text" username="amigo" password="amigo" path="/AD" war="/dist/AD.war" update="true"/>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
