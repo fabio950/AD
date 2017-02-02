@@ -19,7 +19,7 @@
     <property name="j2ee.server.home" value="./tools/ant" />
     
     <target name="t1" depends="dist">
-      <deploy url="http://172.16.205.126/manager/text" username="amigo" password="amigo" path="/AD" war="./dist/AD.war" update="true"/>
+      <deploy url="http://172.16.205.151/manager/text" username="amigo" password="amigo" path="/AD" war="./dist/AD.war" update="true"/>
     </target>
     <!--
 
